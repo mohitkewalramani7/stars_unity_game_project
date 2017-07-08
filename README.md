@@ -12,3 +12,7 @@ A game developed using the Unity platform, written mainly in C# that allows the 
 3) The maze canvas are surrounded by walls to ensure that the ball cannot leave the terrain. A background setting is present upon which the entire maze is drawn
 
 4) The collecibles have taken the abstract form of a prefab, with an associated common colour, but unique position through the maze
+
+# Demo : 
+
+View the screenshots of the game as attached.
