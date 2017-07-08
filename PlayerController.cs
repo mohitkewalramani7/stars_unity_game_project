@@ -21,21 +21,32 @@ The class that controlls the PlayerController behaviour
  */
 public class PlayerController : MonoBehaviour {
 
-	private Rigidbody rb; 									// The player object
+	// The player object
+	private Rigidbody rb; 									
 	
-	public float speed;										// The speed with with the player object moves
-	private Quaternion calibrationQuaternion;				// The input given in from the accelorometer
+	// The speed with with the player object moves
+	public float speed;						
+	// The input given in from the accelorometer				
+	private Quaternion calibrationQuaternion;				
 	
-	private int score;										// The integer value that stores the user's score
-	public Text scoreText;									// The text view on the UI that displays the user's score
+	// The integer value that stores the user's score
+	private int score;				
+	// The text view on the UI that displays the user's score
+	public Text scoreText;									
 	
-	private float timeLeft = 120.0f;						// The time left until the current game is over
-	public Text timeText;									// The textview on the screen that displays the amount of time left
+	// The time left until the current game is over
+	private float timeLeft = 120.0f;	
+	// The textview on the screen that displays the amount of time left
+	public Text timeText;									
 	
-	public Text gameOverText;								// The text displayed on the screen when the game is over
-	public Button reset;									// The button to be clicked to reset the game
-	private bool gameOver = false;							// The local boolean used to keep track of the game's status 
-	List<Collider> objects = new List<Collider>(); 			// A list of colliders the player has collected
+	// The text displayed on the screen when the game is over
+	public Text gameOverText;
+	// The button to be clicked to reset the game								
+	public Button reset;				
+	// The local boolean used to keep track of the game's status					
+	private bool gameOver = false;		
+	// A list of colliders the player has collected					 
+	List<Collider> objects = new List<Collider>(); 			
 
 	/**
 	This method is called at the start of the game.
@@ -95,10 +106,17 @@ public class PlayerController : MonoBehaviour {
 		// Check if it's a star
 		if (other.gameObject.CompareTag("Star") && !gameOver)
 		{
-			objects.Add(other);											// Add to collected list
-			other.gameObject.SetActive(false);							// Make star disappear
-			score += 1;													// Add 1 to score
-			scoreText.text = "Score : " + score.ToString();				// Update score on screen
+			// Add to collected list
+			objects.Add(other);				
+
+			// Make star disappear							
+			other.gameObject.SetActive(false);	
+
+			// Add 1 to score						
+			score += 1;								
+			
+			// Update score on screen					
+			scoreText.text = "Score : " + score.ToString();				
 		}
 	}
 
